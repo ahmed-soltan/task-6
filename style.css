@@ -1,0 +1,563 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    overflow-x:hidden ;
+}
+.header{
+    max-width: 100%;
+    height: 65px;
+    background: white;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+.header nav{
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .top{
+    display: none;
+}
+.header nav div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header nav div.left .fa-brands{
+    color: aliceblue;
+    cursor: pointer;
+    background: linear-gradient(to bottom , rgb(68, 158, 238),rgb(18, 72, 173));
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 35px;
+    margin-right: 10px;
+}
+.header nav div .search-box{
+    position: relative;
+}
+.header nav div .search-box input{
+    border: 0;
+    background: #f0f0f0;
+    color: #333;
+    width: 250px;
+    padding: 15px 35px;
+    border-radius: 35px;
+    font-size: 17px;
+}
+ input:focus{
+    outline: none;
+    border: 0;
+}
+.header nav div .search-box input::placeholder{
+    color: #555;
+    font-size: 17px;
+}
+.header nav div .search-box .fa-solid{
+    cursor: pointer;
+    color: #555;
+    position: absolute;
+    left: 5%;
+}
+.header nav div.center{
+    margin-right: 150px;
+}
+.header nav div.center .fa-solid.active{
+    color: rgb(31, 95, 192);
+    /* padding-bottom: 10px;
+    border-bottom: 3px solid rgb(31, 95, 192); */
+    position: relative;
+}
+.header nav div.center .fa-solid.active::after{
+    content: '';
+    width: 250%;
+    margin-left:-20px;
+    height: 4px;
+    background:rgb(50, 118, 228) ;
+    position: absolute;
+    bottom: -40%;
+    display: block;
+}
+.header nav div.center .fa-solid{
+    cursor: pointer;
+    font-size: 26px;
+    margin: 0 45px;
+    color: #555;
+}
+.header nav div.right .fa-solid,
+.header nav div.right .fa-brands{
+    padding: 10px;
+    font-size: 22px;
+    background: #e8e8e8;
+    color: black;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+ .profile{
+    position: relative;
+    cursor: pointer;
+}
+ .profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.profile span{
+    position: absolute;
+    padding: 0 3px;
+    background: rgb(239, 31, 31);
+    color: aliceblue;
+    top: 0;
+    left: -45%;
+    z-index: 3;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.container{
+    width: 100%;
+    padding: 40px 0;
+    background: #ebeaea;
+}
+.container .row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.container .row .col-1{
+    width: 350px;
+    height: 100%;
+    position: fixed;
+    top: 87px;
+    left: 0;
+}
+.container .row ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+}
+.container .row ul li{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 0;
+    transition: .2s;
+}
+.container .row .col-1 ul li:hover{
+    background: #dcdbdb;
+}
+.container .row .col-1 ul li p{
+    color: black;
+    font-size: 17px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.container .row .col-1 ul li img{
+    width: 40px;
+    height: 40px;
+}
+.container .row .col-1 ul li .fa-solid{
+    padding: 10px;
+    font-size: 22px;
+    background: #e8e8e8;
+    color: black;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container .row .col-1 hr{
+    width: 90%;
+    margin:10px auto;
+}
+.container .row .col-1 .shortcut{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.container .row .col-1 .shortcut h3{
+    color: #666;
+    font-size: 20px;
+    margin-bottom: 20px;
+}.container .row .col-1 .shortcut .short{
+    display: flex;
+    align-items: center;
+}
+.container .row .col-1 .shortcut .short img{
+    width: 70px;
+    height: 50px;
+    margin-right:10px;
+}
+.container .row .col-1 .shortcut .short p{
+    
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.container .row .col-3{
+    width: 350px;
+    height: 90%;
+    position: fixed;
+    top: 85px;
+    right: 0;
+    overflow-y: auto;
+}
+.container .row .col-3 .contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 15px;
+    
+}
+.container .row .col-3 .contact .icons{
+    display: flex;
+    align-items: center;
+}
+.container .row .col-3 .contact .icons .fa-solid{
+    margin: 0 10px;
+}
+.container .row .col-3 ul{
+padding: 0;
+margin: 0;
+   
+}
+.container .row .col-3 ul li{
+    margin: 7px 0;
+    padding: 3px 5px;
+}
+.container .row .col-3 ul li:hover{
+    background: #dcdbdb;
+}
+.container .row .col-3 ul li img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.col-2{
+   width: 37%;
+   margin:0 auto;
+   margin-top: 50px;
+   height: 100%;
+   /* border: 1px solid black; */
+}
+.stories{
+    max-width: 100%;
+    height: 300px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px 1px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 10px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav div{
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    color: #666;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.nav div p{
+    margin: 0 10px;
+    font-weight: 600;
+    position: relative;
+}
+.nav div.active::after{
+    content: '';
+    width: 150%;
+    margin-left:-30px;
+    height: 4px;
+    background:rgb(50, 118, 228) ;
+    position: absolute;
+    bottom: -40%;
+    display: block;
+}
+.nav div.active{
+    color: rgb(50, 118, 228);
+}
+.story{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.story div{
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 10px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+    
+    text-align: left;
+}
+.story div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.story div .fa-solid{
+    color: aliceblue;
+    padding: 10px;
+    background: rgb(50, 118, 228);
+    border-radius: 50%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid white;
+}
+.story div p{
+    font-size: 14px;
+    font-weight: 550;
+    color: rgb(231, 231, 231);
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+.story div img.secondary-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    border: 5px solid rgb(50, 118, 228);
+    z-index: 3;
+    left: 7%;
+    top: 10%;
+}
+.story div img.main-img{
+    height: 70%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.story div p.main-p{
+    margin-top: 25px;
+    color: black;
+    margin-left: 10px;
+}
+.thinking{
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px 1px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.thinking .first{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    width: 100%;
+}
+.thinking .first img{
+    width: 50px;
+    height: 50px;
+}
+.thinking .first input{
+    border: 0;
+    width: 85%;
+    padding: 15px 10px;
+    background: #ebecec;
+    border-radius: 40px;
+    font-size: 18px;
+    margin-left: 8px;
+}
+.thinking .first input::placeholder{
+    font-size: 18px;
+}
+.thinking hr{
+    width: 90%;
+    margin:15px auto;
+    color: #bcbaba;
+    height: .5px;
+}
+.thinking .second{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 85%;
+    margin: auto;
+    text-align: center;
+}
+.thinking .second div{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 17px;
+
+    height: 40px;
+    transition: .3s;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.thinking .second div:hover{
+    background: #e8e8e8;
+}
+.thinking .second div p{
+    color: #666;
+    margin-left: 7px;
+}
+.thinking .second div .fa-video{
+    color: red;
+    font-size: 22px;
+}
+.thinking .second div .fa-images{
+    color: rgb(63, 192, 31);
+    font-size: 22px;
+}
+.thinking .second div .fa-face-smile{
+    color: rgb(215, 171, 51);
+    font-size: 22px;
+}
+.post{
+    width: 100%;
+    height: 850px;
+    border-radius: 7px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    background: white;
+}
+.post .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 10px;
+}
+.post .nav .info .fa-check{
+    color: aliceblue;
+    background: rgb(27, 92, 197);
+    border-radius: 50%;
+    font-size: 10px;
+    padding: 3px;
+   
+}
+.post .nav .info{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+.post .nav .info .text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+
+    max-width: 180px;
+}
+.post .nav p{
+    display: block;
+    color: black;
+    font-size: 18px;
+}
+.post .nav span{
+    font-size: 14px;
+    text-align: left;
+    padding-left: 12px;
+    padding-top: 5px;
+    width: 100%;
+}
+.post .nav .icon .fa-solid{
+    margin: 0 15px;
+}
+.post .body{
+    width: 95%;
+    margin: auto;
+}
+.post .body p{
+    /* margin-left: 10px; */
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+.post .body .post-img{
+    width: 100%;
+    height: 600px;
+}
+.post .reacts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin:10px auto;
+}
+.post .reacts div{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.post .reacts div .fa-heart{
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: white;
+    background: linear-gradient(to bottom , rgb(236, 118, 118),rgb(173, 18, 18));
+    border-radius: 50%;
+    padding: 5px;
+    transform: translateX(25%);
+}
+.post .reacts div p{
+    color: #666;
+    margin: 0 10px;
+}
+.post .reacts div .fa-thumbs-up{
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: white;
+    background: linear-gradient(to bottom , rgb(68, 158, 238),rgb(18, 72, 173));
+    border-radius: 50%;
+    padding: 5px;
+
+}
+.post hr{
+    width: 94%;
+    margin: auto;
+}
+
+.post .footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    color: #666;
+    font-size: 19px;
+    padding-top: 10px;
+}
+.post .footer div{
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    transition: .3s;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.post .footer div:hover{
+    background: #ececec;
+}
+.post .footer div p{
+    margin: 0 10px;
+}
+
